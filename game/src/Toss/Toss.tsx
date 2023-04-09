@@ -10,10 +10,10 @@ import { ImageContext } from '../context/imageContext';
 export const Toss = () => {
 
     const [toss, setToss] = useState<string>('');
-    const [spinner, startSpin] = useState(false);
+    const [spinner, startSpin] = useState<boolean>(false);
     const outcomes = ['Heads', 'Tails'];
     const choice = ["Bat", 'Bowl'];
-    const [result, setResult] = useState('');
+    const [result, setResult] = useState<string>('');
     const bat = useContext(ImageContext);
     const screen = useContext(ImageContext);
     const batting = bat?.batting[0];
@@ -71,7 +71,7 @@ export const Toss = () => {
                                 outcomes.map(e => (
                                     <button
                                         key={e}
-                                        className='place-content-center m-8 w-32 bg-white tracking-wide text-gray-900 font-bold rounded border-b-2 border-blue-500 text-white hover:border-2 hover:text-white hover:bg-blue-500 shadow-md px-14 py-5 inline-flex items-center hover:animate-bounce w-6 h-6      '
+                                        className='place-content-center m-8 w-32 bg-white tracking-wide text-black font-bold rounded border-b-2 border-blue-500 text-white hover:border-2 hover:text-white hover:bg-blue-500 shadow-md px-14 py-5 inline-flex items-center hover:animate-bounce w-6 h-6      '
                                         onClick={() => spinCoin(e)}
                                     >
                                         {e}
