@@ -1,11 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { ImageContext }  from "../context/imageContext"
-import bat from 'assets/cricket-bat.png';
-import ball from 'assets/ball.png';
-import computer from 'assets/laptop.png';
-import user from 'assets/user.png';
-import 'components/Game/Game.css';
-import { string } from 'prop-types';
+import bat from "../assets/cricket-bat.png"
+import ball from '../assets/ball.png';
+import computer from '../assets/laptop.png';
+import user from '../assets/user.png';
+ 
+ 
 
 /**
  * @component The game component
