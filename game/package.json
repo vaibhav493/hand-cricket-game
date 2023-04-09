@@ -9,6 +9,7 @@
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.23",
     "@types/react-dom": "^18.0.11",
+    "animate.css": "^4.1.1",
     "dispatch": "^1.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

@@ -1,6 +1,6 @@
 import React, { useState, useContext, ChangeEvent } from "react";
 import { ImageContext } from "./context/imageContext";
-import "semantic-ui-css/semantic.min.css";
+import 'animate.css'
 
 type ScreenType = "TOSS" | "BATTING" | "BOWLING" | "RESULTS";
 
@@ -35,9 +35,9 @@ const Home: React.FC = () => {
   };
 
   return (
-    <main className="text-red-600 w-85 mx-auto bg-green-200 text-left p-20">
-      <h2 className="text-center">Play along!</h2>
-      <h3 className="text-center">Rules:</h3>
+    <main className="text-red-600 w-85 mx-auto bg-green-200 text-left p-20 animate__animated animate__fadeInUp">
+      <h2 className="text-center text-3xl font-bold">Play along!</h2>
+      <h3 className="text-center text-lg font-bold">Rules:</h3>
       <ul className="list-disc list-inside ml-30">
         <li>Select Heads or Tails for the Toss.</li>
         <li>Select whether You want to Bat or Bowl first.</li>
