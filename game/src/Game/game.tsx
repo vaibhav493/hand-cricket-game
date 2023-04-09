@@ -1,10 +1,11 @@
 import React, { useContext, useState } from 'react';
-import { ImageContext } from 'components';
+import { ImageContext }  from "../context/imageContext"
 import bat from 'assets/cricket-bat.png';
 import ball from 'assets/ball.png';
 import computer from 'assets/laptop.png';
 import user from 'assets/user.png';
 import 'components/Game/Game.css';
+import { string } from 'prop-types';
 
 /**
  * @component The game component
@@ -13,7 +14,7 @@ import 'components/Game/Game.css';
 const Game: React.FC = () => {
   const [batFirst, setBatFirst] = useContext<any>(ImageContext).batting;
   const [currentBatting, setBatting] = useState<string>(batFirst);
-  const [currentRun, setRun] = useState<string>('');
+  const [currentRun, setRun] = useState<number|string>("");
   const [disableFactor, disableButton] = useState<boolean>(false);
   const [avatarAnime, setAnime] = useState<boolean>(false);
   const runs: number[] = [1, 2, 3, 4, 5, 6];
@@ -46,7 +47,7 @@ const Game: React.FC = () => {
    * @description Compares randomly generated computer scores and processes the data based on state
    */
   const processScore = (run: number): void => {
-    const compOutcome: number = Math.floor(Math.random() * 6) + 1;
+    const compOutcome :number|string = Math.floor(Math.random() * 6) + 1;
     setUserOutcome(run);
     setComputerOutcome(compOutcome);
     if (currentBatting === 'USER') {
@@ -115,7 +116,7 @@ const Game: React.FC = () => {
       }
     }
   }
-
+console.log(currentRun,"currentRun")
   return (
     <main>
       <h3>
@@ -143,15 +144,16 @@ const Game: React.FC = () => {
         <div className="run-container">
           { `Inning: ${inning}` }
           <br/>
-          {
-            isNaN(currentRun) ? (
-              <React.Fragment>
+                  {
+                      
+            isNaN(+currentRun) ? (
+              <div>
                 { currentRun }
-              </React.Fragment>
+              </div>
             ) : (
-              <React.Fragment>
+              <div>
                 { `This ball: ${currentRun}` }
-              </React.Fragment>
+              </div>
             )
           }
           <br/>
