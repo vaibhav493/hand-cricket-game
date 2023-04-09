@@ -18,10 +18,10 @@ export const Toss = () => {
     const screen = useContext(ImageContext);
     const batting = bat?.batting[0];
     let setBatFirst = bat?.batting[1];
-    console.log(bat?.batting[1]);
+    // console.log(bat?.batting[1]);
     let setScreen = screen?.screen[1];
 
-    console.log(setScreen);
+    // console.log(setScreen);
 
 
     const spinCoin = (e: string) => {
